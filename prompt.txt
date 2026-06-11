@@ -1,0 +1,58 @@
+Build a premium single-page HTML website for PCW Services - General Contractor.
+
+## BUSINESS INFO
+- Name: PCW Services (PCW Contracting Services)
+- Phone: (949) 548-9969
+- Address: 981 W. 18th Street, Costa Mesa, CA 92627
+- Since: 1989 (35+ years)
+- License: #699611
+- Email: Customerservice@pcwservices.com
+- Website: https://www.pcwservices.com
+- Tagline: "Extraordinary Service ~ Exceptional Results ~ Trusted Advisor"
+
+## DESIGN
+- Colors: Navy (#0f172a), Orange (#f97316), Gold (#fbbf24)
+- Fonts: Bebas Neue (headings), DM Sans (body)
+- Style: Professional construction, premium, trustworthy, modern
+
+## SECTIONS NEEDED
+1. Fixed header with logo + full navigation (Home, Services, Projects, Blog, About, Contact)
+2. Hero (full viewport, dark overlay, headline, dual CTAs)
+3. Stats bar (35+ Years, Licensed #699611, 500+ Projects)
+4. Services grid (6 cards with icons) - link to service pages
+5. Why Choose Us (6 features with checkmarks)
+6. Projects gallery (9 project cards)
+7. Testimonials (3 quotes)
+8. Blog section (4-5 articles with titles + excerpts)
+9. CTA contact form (name, email, phone, service dropdown, message)
+10. Footer (4 columns: Company, Quick Links, Contact, Hours)
+
+## FEATURES REQUIRED
+- AI chatbot floating button (bottom-right, purple gradient)
+- WhatsApp floating button (green, pulsing, bottom-right above chatbot)
+- Click-to-call: tel:19495489969
+- Scroll reveal animations (IntersectionObserver)
+- Stats counter animation on scroll
+- Full SEO meta (title, description, keywords, OG, Twitter)
+- JSON-LD LocalBusiness schema
+- Mobile-first responsive
+- Wave SVG divider between sections
+
+## SERVICE PAGES TO LINK (18 services)
+Roofing, Concrete, Decking, Doors/Windows, Dry Rot Repair, Emergency Repair, Fencing, Interior Repairs, Maintenance Repairs, Masonry, Parking Structure, Planter Boxes, Pools, Structural Repair, Stucco, Waterproofing, Wood Replacement, Below Grade
+
+## BLOG ARTICLES (4-5)
+1. "10 Questions to Ask Before Hiring a Contractor in Southern California"
+2. "How to Prepare Your HOA for Rainy Season: Complete Guide"
+3. "5 Signs Your Building Needs Structural Repair"
+4. "Why HOA Reserve Studies Matter for Property Value"
+5. "Emergency Construction Services: What to Do When Disaster Strikes"
+
+## OUTPUT
+Write to: /tmp/pcw-rebuild/index.html
+
+## GITHUB
+After writing, push to: https://github.com/callmat3ai-cloud/pcw-services-preview
+Enable GitHub Pages.
+
+Return the live URL when done.
