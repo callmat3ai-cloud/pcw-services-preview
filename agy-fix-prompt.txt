@@ -1,0 +1,79 @@
+You are Agy, the Google Antigravity site builder. Fix the existing PCW Services preview site in /tmp/pcw-rebuild/index.html and push the final result to the existing GitHub repo callmat3ai-cloud/pcw-services-preview.
+
+LIVE SITE QA FINDINGS FROM MARCUS BROWSER CHECK:
+URL: https://callmat3ai-cloud.github.io/pcw-services-preview/
+Business: PCW Services / PCW Contracting Services, general contractor in Costa Mesa / Southern California.
+
+Critical issues Pulkit reported and Marcus verified:
+1. The website is not properly mobile optimized.
+2. Navigation menu is not working as expected.
+3. Services needs a visible dropdown/flyout where users can see all services pages.
+4. Blog should also be accessible from navigation/dropdown.
+5. Logo/header must not cover content on desktop or mobile.
+6. Some images appear missing/not visible to user even though file URLs return 200 — fix display, sizing, object-fit, z-index, lazy/eager loading and add graceful image fallbacks.
+
+REQUIRED FIXES — DO NOT SKIP:
+
+A) Desktop navigation
+- Keep a premium sticky header but make it clean and usable.
+- Add real dropdown menus using accessible HTML/CSS/JS:
+  - Services dropdown must show ALL service pages/anchors:
+    Roofing, Concrete, Decking, Doors/Windows, Dry Rot Repair, Emergency Repair, Fencing, Interior Repairs, Maintenance Repairs, Masonry, Parking Structure, Planter Boxes, Pools, Structural Repair, Stucco, Waterproofing, Wood Replacement, Below Grade.
+  - Projects dropdown must show key project categories or project pages: HOA & Commercial, Waterproofing & Decks, Premium Residential, Parking Structures, Structural Repair.
+  - Blog dropdown must show the blog guides/articles present on the page.
+- Dropdowns must open on hover AND keyboard focus on desktop.
+- Dropdowns must be clickable, not hidden behind hero/images.
+- Use z-index high enough for header/dropdowns: header z-index 1000, dropdown z-index 1001+.
+
+B) Mobile navigation
+- Implement a hamburger menu for <= 768px.
+- Hide desktop nav links and CTA overflow on mobile.
+- Hamburger should open a full-screen or slide-out mobile drawer.
+- Mobile drawer must include expandable/collapsible sections for Services, Projects, Blog.
+- User should be able to tap Services and see all services pages; tap Blog and see blog links.
+- Add close button or hamburger transforms to X.
+- Lock body scroll when menu is open.
+- Close drawer when a link is clicked or Escape is pressed.
+- Use ARIA: aria-expanded, aria-controls, aria-labels.
+- No horizontal overflow at 320px, 375px, 390px, 414px widths.
+
+C) Logo/header sizing
+- Logo must not cover nav or hero content.
+- Desktop logo max-width around 210px, header height around 76-88px.
+- Mobile logo max-width 150-170px, header height around 64-72px.
+- If image logo is present, set width/height and object-fit contain.
+- Add top padding/margin to hero so sticky header does not overlay headline.
+
+D) Images
+- Audit all image elements and background images.
+- Ensure hero image and project images display visibly on desktop and mobile.
+- Use explicit width/height attributes or aspect-ratio CSS.
+- Use object-fit: cover; background-size: cover; background-position: center.
+- Hero image should be loading="eager" and decoding="async". Below-fold images can be lazy.
+- Add onerror fallback to a gradient/placeholder, never show broken icons.
+- Make image containers have min-height so they do not collapse.
+
+E) Responsive QA inside code
+- Add robust @media queries for max-width: 1024px, 768px, 480px.
+- Hero should stack cleanly on mobile.
+- Cards/grids should become 1-column on mobile.
+- Buttons should be full-width or wrap properly on mobile.
+- Form fields must be readable and not overflow.
+- Font sizes must clamp: hero headline should not be giant on mobile.
+
+F) Preserve quality
+- Keep current premium design, SEO tags, LocalBusiness schema, contact form, phone/email/address, service directory, testimonials, blog, and project sections.
+- Do not reduce site below 50KB.
+- Do not replace with a small template.
+- Single index.html only, inline CSS/JS, vanilla JS only.
+
+G) Verification commands after editing
+Run:
+- wc -c /tmp/pcw-rebuild/index.html  (must be > 50000)
+- grep checks for dropdown/mobile-menu/menu-toggle/mobile-drawer/services dropdown.
+- git add -A && git commit -m "Fix mobile navigation dropdowns and image responsiveness" || true
+- git push origin main --force
+Then verify live after deploy:
+- curl -L -s -o /dev/null -w '%{http_code}' https://callmat3ai-cloud.github.io/pcw-services-preview/  (must be 200)
+
+Now edit /tmp/pcw-rebuild/index.html directly and perform the git push. Return a concise summary of exactly what changed.
