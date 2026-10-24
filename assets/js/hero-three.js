@@ -23,7 +23,7 @@
 
   try {
     const scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x060911, 0.015);
+    scene.fog = new THREE.FogExp2(0x090d16, 0.015);
 
     const width = container.clientWidth || window.innerWidth;
     const height = container.clientHeight || window.innerHeight;
@@ -39,7 +39,7 @@
     container.appendChild(renderer.domElement);
 
     // Subtle ground perspective grid
-    const gridHelper = new THREE.GridHelper(80, 20, 0x38bdf8, 0x1e293b);
+    const gridHelper = new THREE.GridHelper(80, 20, 0x2563eb, 0x1e293b);
     gridHelper.position.y = -5;
     if (gridHelper.material) {
       gridHelper.material.opacity = 0.28;
@@ -100,7 +100,7 @@
     const nodeGeo = new THREE.BufferGeometry();
     nodeGeo.setAttribute('position', new THREE.Float32BufferAttribute(nodePositions, 3));
     const nodeMat = new THREE.PointsMaterial({
-      color: 0xd97706,
+      color: 0xfbbf24,
       size: 2.2,
       transparent: true,
       opacity: 0.38,
