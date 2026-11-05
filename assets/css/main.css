@@ -2393,34 +2393,48 @@ textarea.form-control {
   color: var(--blue-bright);
 }
 
-/* Knowledge Hub Dark Theme */
+/* Knowledge Hub Light Section */
 .knowledge-hub-preview-section {
-  background-color: var(--navy-950) !important;
-  color: var(--white) !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background-color: var(--white) !important;
+  color: var(--navy-950) !important;
+  border-top: 1px solid var(--border-light) !important;
+  border-bottom: 1px solid var(--border-light) !important;
 }
 .knowledge-hub-preview-section .section-h2 {
-  color: var(--white) !important;
+  color: var(--navy-950) !important;
+}
+.knowledge-hub-preview-section .section-h2 span {
+  color: var(--primary-blue) !important;
 }
 .knowledge-hub-preview-section .section-p {
-  color: var(--slate-300) !important;
+  color: var(--slate-600) !important;
+}
+.knowledge-hub-preview-section .kicker {
+  color: var(--gold-600) !important;
 }
 .knowledge-hub-preview-section .hub-topic-card {
-  background-color: rgba(18, 38, 70, 0.75) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.45) !important;
-  color: var(--white) !important;
+  background-color: var(--white) !important;
+  border: 1px solid var(--border-light) !important;
+  box-shadow: 0 4px 16px -2px rgba(10, 25, 47, 0.06) !important;
+  color: var(--navy-950) !important;
+  border-radius: var(--radius-md) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+.knowledge-hub-preview-section .hub-topic-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 14px 30px -4px rgba(10, 25, 47, 0.12) !important;
+  border-color: var(--primary-blue) !important;
 }
 .knowledge-hub-preview-section .hub-topic-card h3 {
-  color: var(--white) !important;
+  color: var(--navy-950) !important;
 }
 .knowledge-hub-preview-section .hub-topic-card p {
-  color: var(--slate-300) !important;
+  color: var(--slate-600) !important;
 }
 .knowledge-hub-preview-section .kicker-pill {
-  background: rgba(251, 191, 36, 0.15) !important;
-  color: var(--gold-400) !important;
+  background: var(--slate-100) !important;
+  border: 1px solid var(--slate-200) !important;
+  color: var(--primary-blue) !important;
 }
 .dir-section .section-p,
 .dir-lead {
