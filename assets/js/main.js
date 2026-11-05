@@ -247,6 +247,7 @@ async function handleFormSubmit(event) {
     // cursor glow + ring follow with lerp
     var glow = document.createElement('div'); glow.className = 'pcw-cursor'; glow.setAttribute('aria-hidden', 'true');
     var ring = document.createElement('div'); ring.className = 'pcw-cursor-ring'; ring.setAttribute('aria-hidden', 'true');
+    ring.innerHTML = '<svg class="pcw-cursor-svg" viewBox="0 0 40 40"><circle class="cursor-outer-circle" cx="20" cy="20" r="16" fill="none" stroke="rgba(56, 189, 248, 0.75)" stroke-width="1.5" stroke-dasharray="4 2" /><circle class="cursor-center-dot" cx="20" cy="20" r="3" fill="#fbbf24" /></svg>';
     document.body.appendChild(glow); document.body.appendChild(ring);
     var mx = -999, my = -999, gx = mx, gy = my, rx = mx, ry = my, on = false;
     function loop() {
