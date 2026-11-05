@@ -237,39 +237,14 @@ async function handleFormSubmit(event) {
   }
 }
 
+document.documentElement.classList.add('js');
+
 /* PCW interactive polish: cursor glow + scroll reveal + card tilt-safe hover (desktop only) */
 (function () {
   try {
     var fine = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!fine || reduced) return;
-
-    // cursor glow + ring follow with lerp
-    var glow = document.createElement('div'); glow.className = 'pcw-cursor'; glow.setAttribute('aria-hidden', 'true');
-    var ring = document.createElement('div'); ring.className = 'pcw-cursor-ring'; ring.setAttribute('aria-hidden', 'true');
-    ring.innerHTML = '<svg class="pcw-cursor-svg" viewBox="0 0 40 40"><circle class="cursor-outer-circle" cx="20" cy="20" r="16" fill="none" stroke="rgba(56, 189, 248, 0.75)" stroke-width="1.5" stroke-dasharray="4 2" /><circle class="cursor-center-dot" cx="20" cy="20" r="3" fill="#fbbf24" /></svg>';
-    document.body.appendChild(glow); document.body.appendChild(ring);
-    var mx = -999, my = -999, gx = mx, gy = my, rx = mx, ry = my, on = false;
-    function loop() {
-      gx += (mx - gx) * 0.12; gy += (my - gy) * 0.12;
-      rx += (mx - rx) * 0.35; ry += (my - ry) * 0.35;
-      glow.style.transform = 'translate(' + gx + 'px,' + gy + 'px)';
-      ring.style.transform = 'translate(' + rx + 'px,' + ry + 'px)';
-      requestAnimationFrame(loop);
-    }
-    requestAnimationFrame(loop);
-    document.addEventListener('pointermove', function (e) {
-      mx = e.clientX; my = e.clientY;
-      if (!on) { on = true; glow.classList.add('is-on'); ring.classList.add('is-on'); }
-    }, { passive: true });
-    document.addEventListener('pointerleave', function () {
-      on = false; glow.classList.remove('is-on'); ring.classList.remove('is-on');
-    });
-    // ring grows over interactive elements
-    document.addEventListener('pointerover', function (e) {
-      var t = e.target.closest && e.target.closest('a, button, .dir-card, .hub-topic-card, .review-card, .cap-card, input, select, textarea');
-      ring.classList.toggle('is-hot', !!t);
-    }, { passive: true });
 
     // scroll reveal for sections/cards
     var els = document.querySelectorAll('section .container > *, .dir-card, .hub-topic-card, .review-card, .cap-card');
