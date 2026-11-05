@@ -731,40 +731,40 @@ button, input, select, textarea {
 
 /* Division 1: Project Services - Light Slate/White Image-Led Band */
 .division-gateway-section.division-project {
-  background: linear-gradient(180deg, var(--navy-950) 0%, var(--navy-900) 100%);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  color: var(--white);
+  background-color: var(--white);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  color: var(--navy-900);
 }
 
 .division-gateway-section.division-project .section-h2 {
-  color: var(--white);
+  color: var(--navy-950);
 }
 
 .division-gateway-section.division-project .section-h2 span {
-  color: var(--blue-bright);
+  color: var(--primary-blue);
 }
 
 .division-gateway-section.division-project .kicker {
-  color: var(--blue-bright);
+  color: var(--primary-blue);
 }
 
 .division-gateway-section.division-project .section-p {
-  color: var(--slate-300);
+  color: var(--slate-600);
 }
 
 .division-gateway-section.division-project .feature-list-item {
-  color: var(--slate-200);
+  color: var(--slate-700);
 }
 
 .division-gateway-section.division-project .feature-list-item i {
-  color: var(--blue-bright);
+  color: var(--primary-blue);
 }
 
 .division-gateway-section.division-project .division-image-wrap {
-  background-color: var(--navy-900);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.7);
+  background-color: var(--slate-100);
+  border: 1px solid var(--slate-200);
+  box-shadow: var(--shadow-lg);
 }
 
 .division-gateway-section.division-project .division-image-overlay {
@@ -787,39 +787,40 @@ button, input, select, textarea {
 
 /* Division 2: Property Services - Complementary Navy/Blue Dark Band */
 .division-gateway-section.division-property {
-  background: linear-gradient(135deg, var(--navy-950) 0%, var(--navy-900) 50%, var(--navy-800) 100%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  color: var(--white);
+  background-color: var(--white);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  color: var(--navy-900);
 }
 
 .division-gateway-section.division-property .section-h2 {
-  color: var(--white);
+  color: var(--navy-950);
 }
 
 .division-gateway-section.division-property .section-h2 span {
-  color: var(--gold-400);
+  color: var(--gold-600);
 }
 
 .division-gateway-section.division-property .kicker {
-  color: var(--gold-400);
+  color: var(--gold-600);
 }
 
 .division-gateway-section.division-property .section-p {
-  color: var(--slate-300);
+  color: var(--slate-600);
 }
 
 .division-gateway-section.division-property .feature-list-item {
-  color: var(--slate-100);
+  color: var(--slate-700);
 }
 
 .division-gateway-section.division-property .feature-list-item i {
-  color: var(--gold-500);
+  color: var(--gold-600);
 }
 
 .division-gateway-section.division-property .division-image-wrap {
-  background-color: var(--navy-900);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.7);
+  background-color: var(--slate-100);
+  border: 1px solid var(--slate-200);
+  box-shadow: var(--shadow-lg);
 }
 
 .division-gateway-section.division-property .division-image-overlay {
@@ -978,16 +979,22 @@ button, input, select, textarea {
    ========================================================================== */
 .proof-section {
   padding: 5.5rem 0;
-  background-color: var(--navy-900);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  color: var(--white);
+  background-color: var(--white);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  color: var(--navy-950);
 }
 .proof-section .section-h2 {
-  color: var(--white);
+  color: var(--navy-950);
+}
+.proof-section .section-h2 span {
+  color: var(--primary-blue);
 }
 .proof-section .section-p {
-  color: var(--slate-300);
+  color: var(--slate-600);
+}
+.proof-section .kicker {
+  color: var(--gold-600);
 }
 
 .proof-header {
@@ -1003,33 +1010,33 @@ button, input, select, textarea {
 }
 
 .differentiator-card {
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   padding: 1.75rem;
-  background-color: rgba(18, 38, 70, 0.7);
-  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.4);
-  color: var(--white);
+  background-color: var(--white);
+  box-shadow: 0 4px 16px -2px rgba(10, 25, 47, 0.05);
+  color: var(--navy-950);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .differentiator-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.6);
-  border-color: var(--blue-bright);
+  box-shadow: 0 14px 28px -4px rgba(10, 25, 47, 0.12);
+  border-color: var(--primary-blue);
 }
 
 .differentiator-card h3 {
-  color: var(--white);
+  color: var(--navy-950);
 }
 
 .differentiator-card p {
-  color: var(--slate-300);
+  color: var(--slate-600);
 }
 
 .differentiator-num {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--gold-400);
+  font-size: 0.82rem;
+  color: var(--gold-600);
   font-weight: 700;
   letter-spacing: 0.1em;
   margin-bottom: 0.75rem;
