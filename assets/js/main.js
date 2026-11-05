@@ -237,8 +237,6 @@ async function handleFormSubmit(event) {
   }
 }
 
-document.documentElement.classList.add('js');
-
 /* PCW interactive polish: cursor glow + scroll reveal + card tilt-safe hover (desktop only) */
 (function () {
   try {
