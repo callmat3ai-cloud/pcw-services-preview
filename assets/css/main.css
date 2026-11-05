@@ -2015,3 +2015,128 @@ textarea.form-control {
     display: none !important;
   }
 }
+
+/* ==========================================================================
+   GREG-SPEC ADDITIONS: stats band, service directories, modals, reviews
+   ========================================================================== */
+.stats-band {
+  background-color: var(--navy-950);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3rem 0;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+.stat-item { display: flex; flex-direction: column; gap: 0.25rem; }
+.stat-value {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  color: var(--gold-400);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--slate-300);
+}
+.dir-section { padding: 5rem 0; background-color: var(--white); }
+.dir-section + .dir-section { border-top: 1px solid var(--border-light); }
+.dir-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+.dir-card {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.dir-card h3 { font-size: 1.2rem; color: var(--navy-950); }
+.dir-tag { font-size: 0.85rem; color: var(--slate-600); }
+.dir-open {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-top: 0.5rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.modal { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(9, 13, 22, 0.7); padding: 1.5rem; overflow-y: auto; }
+.modal:target { display: flex; align-items: flex-start; justify-content: center; }
+.modal-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  max-width: 640px;
+  width: 100%;
+  padding: 2.5rem;
+  margin: 4vh auto;
+  position: relative;
+  max-height: 86vh;
+  overflow-y: auto;
+}
+.modal-close {
+  position: absolute; top: 1rem; right: 1.25rem;
+  font-size: 2rem; line-height: 1; color: var(--slate-500);
+  min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center;
+}
+.modal-card h3 { font-size: 1.8rem; color: var(--navy-950); margin: 0.5rem 0; }
+.modal-tag { font-size: 0.95rem; color: var(--gold-600); font-weight: 600; margin-bottom: 1rem; }
+.modal-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.review-card {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  background-color: var(--slate-50);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.review-card p { font-size: 0.92rem; color: var(--slate-700); line-height: 1.65; }
+.review-cat {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-600);
+  font-weight: 700;
+}
+.review-name { font-weight: 700; color: var(--navy-950); }
+.review-title { font-size: 0.82rem; color: var(--slate-500); }
+.license-block {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: var(--navy-950);
+  color: var(--white);
+  border-radius: var(--radius-md);
+}
+.license-block h3 { font-size: 1.3rem; margin-bottom: 0.25rem; }
+.license-block h3 span { color: var(--gold-400); font-size: 0.95rem; }
+.license-block p { color: var(--slate-300); margin-bottom: 1.25rem; }
+.client-strip { margin-top: 2.5rem; }
+.client-strip h3 { font-size: 1.3rem; color: var(--navy-950); margin-bottom: 0.5rem; }
+.client-strip .affiliation-strip { margin-top: 1rem; }
+@media (max-width: 768px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .modal-card { padding: 1.75rem; }
+}
+@media (max-width: 480px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .dir-grid, .review-grid { grid-template-columns: 1fr !important; }
+}
