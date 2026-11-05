@@ -79,14 +79,14 @@ html {
 body {
   font-family: var(--font-body);
   color: var(--slate-800);
-  background-color: var(--white);
+  background-color: var(--navy-950);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: clip;
   width: 100%;
   position: relative;
-}
+color: var(--slate-100);}
 
 img, picture, svg, video {
   display: block;
@@ -731,40 +731,40 @@ button, input, select, textarea {
 
 /* Division 1: Project Services - Light Slate/White Image-Led Band */
 .division-gateway-section.division-project {
-  background-color: var(--slate-50);
-  border-top: 1px solid var(--slate-200);
-  border-bottom: 1px solid var(--slate-200);
-  color: var(--navy-900);
+  background: linear-gradient(180deg, var(--navy-950) 0%, var(--navy-900) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--white);
 }
 
 .division-gateway-section.division-project .section-h2 {
-  color: var(--navy-950);
+  color: var(--white);
 }
 
 .division-gateway-section.division-project .section-h2 span {
-  color: var(--primary-blue);
+  color: var(--blue-bright);
 }
 
 .division-gateway-section.division-project .kicker {
-  color: var(--primary-blue);
+  color: var(--blue-bright);
 }
 
 .division-gateway-section.division-project .section-p {
-  color: var(--slate-600);
+  color: var(--slate-300);
 }
 
 .division-gateway-section.division-project .feature-list-item {
-  color: var(--slate-700);
+  color: var(--slate-200);
 }
 
 .division-gateway-section.division-project .feature-list-item i {
-  color: var(--primary-blue);
+  color: var(--blue-bright);
 }
 
 .division-gateway-section.division-project .division-image-wrap {
-  background-color: var(--slate-100);
-  border: 1px solid var(--slate-200);
-  box-shadow: var(--shadow-lg);
+  background-color: var(--navy-900);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.7);
 }
 
 .division-gateway-section.division-project .division-image-overlay {
@@ -978,9 +978,16 @@ button, input, select, textarea {
    ========================================================================== */
 .proof-section {
   padding: 5.5rem 0;
-  background-color: var(--white);
-  border-top: 1px solid var(--border-light);
-  border-bottom: 1px solid var(--border-light);
+  background-color: var(--navy-900);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--white);
+}
+.proof-section .section-h2 {
+  color: var(--white);
+}
+.proof-section .section-p {
+  color: var(--slate-300);
 }
 
 .proof-header {
@@ -996,23 +1003,33 @@ button, input, select, textarea {
 }
 
 .differentiator-card {
-  border: 1px solid var(--border-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-md);
   padding: 1.75rem;
-  background-color: var(--white);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: rgba(18, 38, 70, 0.7);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.4);
+  color: var(--white);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .differentiator-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--primary-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.6);
+  border-color: var(--blue-bright);
+}
+
+.differentiator-card h3 {
+  color: var(--white);
+}
+
+.differentiator-card p {
+  color: var(--slate-300);
 }
 
 .differentiator-num {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--gold-600);
+  font-size: 0.8rem;
+  color: var(--gold-400);
   font-weight: 700;
   letter-spacing: 0.1em;
   margin-bottom: 0.75rem;
@@ -1425,8 +1442,41 @@ button, input, select, textarea {
    CONTACT FORM SECTION (EXACT PRESERVED IDS & FUNCTIONALITY)
    ========================================================================== */
 .contact-section {
-  padding: 4.5rem 0;
-  background-color: var(--slate-50);
+  padding: 5.5rem 0;
+  background: linear-gradient(180deg, var(--navy-900) 0%, var(--navy-950) 100%);
+  color: var(--white);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.contact-section .section-h2 {
+  color: var(--white);
+}
+.contact-section .section-p {
+  color: var(--slate-300);
+}
+.contact-details-list {
+  color: var(--slate-200);
+}
+.contact-details-list strong {
+  color: var(--gold-400);
+}
+.contact-details-list a {
+  color: var(--white);
+}
+.contact-section .form-control {
+  background: rgba(14, 30, 56, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--white);
+}
+.contact-section .form-control:focus {
+  border-color: var(--blue-bright);
+  background: rgba(18, 38, 70, 0.95);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+}
+.contact-section .form-label {
+  color: var(--slate-200);
+}
+.contact-section .form-helper {
+  color: var(--slate-400);
 }
 
 .contact-layout {
@@ -2047,9 +2097,9 @@ textarea.form-control {
   letter-spacing: 0.08em;
   color: var(--slate-300);
 }
-.dir-section { padding: 5rem 0; background-color: var(--slate-50); }
-#proj-grid { background-color: var(--slate-50); }
-#prop-grid { background-color: var(--white); }
+.dir-section { padding: 5rem 0; background-color: var(--navy-950); }
+#proj-grid { background-color: var(--navy-950); border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+#prop-grid { background-color: var(--navy-900); border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
 .dir-section + .dir-section { border-top: 1px solid var(--border-light); }
 .dir-grid {
   display: grid;
@@ -2058,12 +2108,13 @@ textarea.form-control {
   margin-top: 2rem;
 }
 .dir-card {
-  border: 1px solid rgba(15, 39, 74, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-top: 3px solid var(--primary-blue);
   border-radius: var(--radius-md);
   padding: 1.6rem 1.5rem;
-  background-color: var(--white);
-  box-shadow: 0 4px 18px -2px rgba(10, 25, 47, 0.05);
+  background-color: rgba(18, 38, 70, 0.75);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.45);
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
@@ -2071,17 +2122,18 @@ textarea.form-control {
 }
 #prop-grid .dir-card {
   border-top: 3px solid var(--gold-500);
+  background-color: rgba(14, 30, 56, 0.85);
 }
 .dir-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 30px -4px rgba(10, 25, 47, 0.12);
-  border-color: rgba(29, 99, 237, 0.35);
+  box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.65);
+  border-color: rgba(56, 189, 248, 0.6);
 }
 #prop-grid .dir-card:hover {
-  border-color: rgba(251, 191, 36, 0.5);
+  border-color: rgba(251, 191, 36, 0.65);
 }
-.dir-card h3 { font-size: 1.2rem; color: var(--navy-950); }
-.dir-tag { font-size: 0.85rem; color: var(--slate-600); }
+.dir-card h3 { font-size: 1.25rem; color: var(--white); }
+.dir-tag { font-size: 0.88rem; color: var(--slate-300); }
 .dir-open {
   font-size: 0.82rem;
   font-weight: 700;
@@ -2329,4 +2381,40 @@ textarea.form-control {
 }
 .testimonials-section .review-cat {
   color: var(--blue-bright);
+}
+
+/* Knowledge Hub Dark Theme */
+.knowledge-hub-preview-section {
+  background-color: var(--navy-950) !important;
+  color: var(--white) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+.knowledge-hub-preview-section .section-h2 {
+  color: var(--white) !important;
+}
+.knowledge-hub-preview-section .section-p {
+  color: var(--slate-300) !important;
+}
+.knowledge-hub-preview-section .hub-topic-card {
+  background-color: rgba(18, 38, 70, 0.75) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.45) !important;
+  color: var(--white) !important;
+}
+.knowledge-hub-preview-section .hub-topic-card h3 {
+  color: var(--white) !important;
+}
+.knowledge-hub-preview-section .hub-topic-card p {
+  color: var(--slate-300) !important;
+}
+.knowledge-hub-preview-section .kicker-pill {
+  background: rgba(251, 191, 36, 0.15) !important;
+  color: var(--gold-400) !important;
+}
+.dir-lead {
+  color: var(--slate-300) !important;
+}
+.dir-lead strong {
+  color: var(--white) !important;
 }
