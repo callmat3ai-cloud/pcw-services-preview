@@ -273,10 +273,11 @@ button, input, select, textarea {
 }
 
 .brand-logo-img {
-  width: 165px;
+  width: 185px;
   height: auto;
   object-fit: contain;
   display: block;
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.18));
 }
 
 /* Desktop Nav */
@@ -2044,7 +2045,9 @@ textarea.form-control {
   letter-spacing: 0.08em;
   color: var(--slate-300);
 }
-.dir-section { padding: 5rem 0; background-color: var(--white); }
+.dir-section { padding: 5rem 0; background-color: var(--slate-50); }
+#proj-grid { background-color: var(--slate-50); }
+#prop-grid { background-color: var(--white); }
 .dir-section + .dir-section { border-top: 1px solid var(--border-light); }
 .dir-grid {
   display: grid;
