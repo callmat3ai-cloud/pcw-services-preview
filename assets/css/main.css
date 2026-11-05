@@ -19,7 +19,7 @@
 
   --gold-400: #fcd34d;
   --gold-500: #fbbf24;
-  --gold-600: #d97706;
+  --gold-600: #b45309;
 
   /* Aliasing amber to exact gold tokens for full palette harmony */
   --amber-400: var(--gold-400);
@@ -51,8 +51,8 @@
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 25px -5px rgba(15, 23, 42, 0.15), 0 8px 10px -6px rgba(15, 23, 42, 0.15);
-  --shadow-xl: 0 20px 40px -15px rgba(10, 25, 47, 0.3);
-  --shadow-gold: 0 15px 30px -10px rgba(251, 191, 36, 0.3);
+  --shadow-xl: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  --shadow-gold: 0 15px 30px -10px rgba(0, 0, 0, 0.4);
 
   /* Layout tokens */
   --max-width: 1240px;
@@ -174,14 +174,14 @@ button, input, select, textarea {
   background-color: var(--primary-blue);
   color: var(--white);
   border-color: var(--primary-blue);
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 .btn-primary:hover {
   background-color: var(--primary-blue-dark);
   border-color: var(--primary-blue-dark);
   color: var(--white);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(29, 78, 216, 0.45);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 .btn-secondary {
@@ -224,7 +224,7 @@ button, input, select, textarea {
   background-color: var(--gold-500);
   color: var(--navy-950);
   border-color: var(--gold-500);
-  box-shadow: 0 4px 14px rgba(251, 191, 36, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
 }
 .btn-gold:hover {
   background-color: var(--gold-600);
@@ -277,7 +277,7 @@ button, input, select, textarea {
   height: auto;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 0 12px rgba(255,255,255,0.18));
+  
 }
 
 /* Desktop Nav */
@@ -1018,14 +1018,14 @@ button, input, select, textarea {
   border-radius: var(--radius-md);
   padding: 1.75rem;
   background-color: var(--white);
-  box-shadow: 0 4px 16px -2px rgba(10, 25, 47, 0.05);
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.05);
   color: var(--navy-950);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .differentiator-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 28px -4px rgba(10, 25, 47, 0.12);
+  box-shadow: 0 14px 28px -4px rgba(0, 0, 0, 0.12);
   border-color: var(--primary-blue);
 }
 
@@ -2119,8 +2119,7 @@ textarea.form-control {
   margin-top: 2rem;
 }
 .dir-card {
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-top: 3px solid var(--primary-blue);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-md);
   padding: 1.6rem 1.5rem;
   background-color: rgba(18, 38, 70, 0.75);
@@ -2132,7 +2131,7 @@ textarea.form-control {
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 #prop-grid .dir-card {
-  border-top: 3px solid var(--gold-500);
+  
   background-color: rgba(14, 30, 56, 0.85);
 }
 .dir-card:hover {
@@ -2299,11 +2298,11 @@ textarea.form-control {
 @media (hover: hover) and (pointer: fine) {
   .dir-card:hover, .hub-topic-card:hover, .review-card:hover, .cap-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 18px 40px -18px rgba(10, 25, 47,.28);
+    box-shadow: 0 18px 40px -18px rgba(0, 0, 0,.28);
     border-color: rgba(37,99,235,.35);
   }
-  .dir-card:hover h3 { color: var(--primary-blue); }
-  .btn-primary:hover, .btn-dark:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -14px rgba(37,99,235,.55); }
+  .dir-card:hover h3 { color: var(--blue-bright); }
+  .btn-primary:hover, .btn-dark:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.45); }
   .nav-link:hover { transform: translateY(-1px); }
 }
 /* scroll reveal */
@@ -2423,6 +2422,7 @@ textarea.form-control {
   background: rgba(251, 191, 36, 0.15) !important;
   color: var(--gold-400) !important;
 }
+.dir-section .section-p,
 .dir-lead {
   color: var(--slate-300) !important;
 }
