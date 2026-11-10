@@ -2396,3 +2396,56 @@ body.homepage .site-header.scrolled {position:fixed;background:var(--navy-950);}
 .modal-division {color:var(--primary-blue);margin-bottom:.5rem;}
 @media(max-width:1200px){.desktop-nav,.header-actions .header-phone{display:none;}.mobile-nav-toggle{display:inline-flex;}}
 @media(max-width:768px){.contact-section{padding:4rem 1rem;}.contact-layout>:first-child,.contact-layout>:last-child{padding:2rem 1.25rem;}}
+
+/* Contact / estimate alignment: shared by the contact page and homepage form.
+   Keep native controls, approved copy, field IDs and submission wiring intact. */
+.contact-section .contact-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+}
+.contact-section .contact-layout > *,
+.contact-section .form-group,
+.contact-section .contact-detail-text {
+  min-width: 0;
+  text-align: left;
+}
+.contact-section .form-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.contact-section .form-control {
+  min-width: 0;
+  max-width: 100%;
+  min-height: 48px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.contact-section .form-control::placeholder {color:var(--slate-500);opacity:1;}
+.contact-section .form-label {font-size:1rem;line-height:1.5;}
+.contact-section .form-helper {font-size:.875rem;line-height:1.5;}
+.contact-section .contact-details-list {margin-top:1.5rem;}
+.contact-section .contact-detail-text :is(p, a) {overflow-wrap:anywhere;}
+.contact-section .contact-layout > :first-child > h2 {
+  font-size:clamp(2rem, 3vw, 2.8rem);
+  line-height:1.15;
+  text-wrap:balance;
+  margin-bottom:1rem;
+}
+.contact-section .contact-layout > :first-child > p {font-size:1rem;line-height:1.6;}
+.contact-page .subpage-hero h1 {text-wrap:balance;white-space:normal;}
+@media (max-width: 1024px) {
+  .contact-section .contact-layout {grid-template-columns:minmax(0, 1fr);}
+}
+@media (max-width: 820px) {
+  .contact-page .subpage-hero {padding:2.5rem 0;}
+  .contact-page .subpage-hero > .container {padding-inline:1.25rem;}
+  .contact-page .subpage-hero h1 {font-size:clamp(2.25rem, 6vw, 3.5rem);line-height:1.1;}
+  .contact-page .subpage-lead {font-size:1rem;line-height:1.6;}
+  .contact-section,
+  .first-draft .contact-section {padding:3rem 1.25rem;}
+  .contact-section .contact-layout {width:100%;}
+  .contact-section .contact-layout > :first-child,
+  .contact-section .contact-layout > :last-child {padding:2rem 1.25rem;}
+  .contact-section .form-grid {grid-template-columns:minmax(0, 1fr);gap:1.25rem;}
+  .contact-section .form-header p {font-size:1rem;line-height:1.6;}
+  .contact-section .contact-detail-item {gap:.75rem;}
+  .contact-section .contact-detail-text :is(p, a) {font-size:1rem;line-height:1.6;}
+}
