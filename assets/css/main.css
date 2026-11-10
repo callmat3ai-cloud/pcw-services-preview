@@ -2410,7 +2410,7 @@ textarea.form-control {
 .hero-title { font-size: clamp(3.8rem, 7vw, 6.4rem); line-height: .92; letter-spacing: .018em; }
 .hero-title span { color: var(--primary-blue); }
 .hero-lead { max-width: 650px; font-size: 1.14rem; color: var(--slate-200); }
-.hero-trust-bar { background: rgba(10,25,47,.93); border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); }
+.hero-trust-bar { background: rgba(10,25,47,.93); border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); padding: 1.35rem 1.5rem; }
 .division-gateway-section { padding: 6.5rem 0; }
 .division-gateway-section.division-project { background: var(--slate-100); }
 .division-gateway-section.division-property { background: var(--white); }
@@ -2428,7 +2428,7 @@ textarea.form-control {
 .dir-tag { line-height: 1.55; }
 .dir-open { margin-top: auto; width: 100%; padding: .72rem .85rem; background: transparent; border: 1px solid rgba(255,255,255,.4); color: var(--white); border-radius: var(--radius-sm); }
 .dir-open:hover, .dir-open:focus-visible { background: var(--primary-blue); border-color: var(--primary-blue); color: var(--white); }
-.directory-overview { padding: 0 0 5.75rem; text-align: center; background: var(--navy-950); color: var(--slate-300); }
+.directory-overview { padding: 1.5rem 0 5.75rem; text-align: center; background: var(--navy-950); color: var(--slate-300); }
 #proj-grid + .directory-overview { background: var(--navy-950); }
 #prop-grid + .directory-overview { background: var(--navy-900); }
 .directory-overview p { margin-bottom: 1rem; }
