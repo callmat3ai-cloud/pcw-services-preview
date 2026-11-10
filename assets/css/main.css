@@ -2380,6 +2380,21 @@ textarea.form-control {
 }
 
 
+/* Focused cleanup: service cards open dialogs; modal CTAs retain distinct roles. */
+.dir-section .section-h2 {color:var(--white)!important;font-size:clamp(2rem,3.5vw,3rem);}
+.dir-section .kicker {color:var(--gold-400);}
+.dir-card {text-decoration:none;cursor:pointer;}
+.dir-card:focus-visible {outline:3px solid var(--gold-400);outline-offset:4px;}
+.dir-details-cue {display:inline-flex;align-items:center;gap:.5rem;margin-top:auto;padding-top:.5rem;color:var(--slate-200);font-size:.875rem;}
+.dir-details-cue svg {width:16px;height:16px;}
+.contact-section a[href^="tel:"] {white-space:nowrap;overflow-wrap:normal;}
+@media(max-width:600px){
+ .header-container {gap:.6rem;}
+ .site-header .brand-logo-img {width:140px;}
+ .site-header .header-actions {gap:.5rem;}
+ .site-header .header-actions>.btn {font-family:var(--font-body);font-size:.8125rem!important;line-height:1.2;letter-spacing:0;white-space:normal;text-align:center;max-width:132px;min-height:44px;padding:.5rem .65rem!important;}
+ .site-header .mobile-nav-toggle {flex-shrink:0;width:44px;min-height:44px;}
+}
 /* Shared first-draft typography and access states. */
 h1,h2,h3,h4,h5,h6 {font-family:var(--font-heading);font-weight:400;letter-spacing:.05em;line-height:1.1;}
 .btn {font-family:var(--font-heading);font-size:1.2rem;border-radius:8px;letter-spacing:.05em;}

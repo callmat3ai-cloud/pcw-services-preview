@@ -800,6 +800,32 @@
 .first-draft .fd-hero {padding:90px 0 100px;}
 .fd-directory-intro p {color:var(--slate-300);}
 .fd-directory-route {margin-top:1.5rem;color:var(--gold-500);}
+/* Focused service discovery cleanup: visible lists, not a second tile wall. */
+.fd-services-all-index {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem;padding:2.5rem;}
+.fd-directory-title {font-size:1.8rem;color:var(--gold-500);margin-bottom:1rem;}
+.fd-services-all-header {grid-column:1/-1;text-align:left;margin-bottom:0;}
+.fd-services-all-index :is(#proj-grid,#prop-grid) {background:transparent;border:0;min-width:0;display:flex;flex-direction:column;}
+.fd-directory-group .fd-directory-intro {font-size:.9rem;line-height:1.6;order:2;margin:1.5rem 0 0;}
+.fd-directory-group .fd-directory-intro p {font-size:inherit;line-height:inherit;}
+.fd-directory-group .fd-directory-title {order:0;}
+.fd-directory-group .fd-services-all-list {order:1;}
+.fd-directory-group .fd-services-all-list {grid-template-columns:repeat(2,minmax(0,1fr));gap:0 1rem;}
+.fd-services-all-index .fd-service-link-item {min-height:48px;padding:.65rem 0;background:transparent;border:0;border-bottom:1px solid var(--slate-600);border-radius:0;line-height:1.4;font-size:.95rem;gap:.4rem;}
+.fd-services-all-index .fd-service-link-item:hover {background:transparent;color:var(--gold-500);transform:none;box-shadow:none;}
+.fd-service-link-item svg {width:16px;height:16px;flex:0 0 16px;}
+.fd-service-link-item:focus-visible {outline:2px solid var(--gold-500);outline-offset:3px;}
+.fd-benefit-column {display:flex;flex-direction:column;gap:1.5rem;min-width:0;}
+.fd-why-us-features {align-items:start;}
+.fd-blog-card .fd-blog-img-placeholder {height:96px;}
+.fd-blog-card .fd-blog-img-placeholder svg {width:40px;height:40px;}
+@media(max-width:900px){.fd-services-all-index{grid-template-columns:minmax(0,1fr);gap:2rem;}}
+@media(max-width:768px){
+ .fd-hero-subtitle {font-size:clamp(1.18rem,5.1vw,1.5rem)!important;line-height:1.25;max-width:24ch;text-wrap:balance;}
+ .fd-hero-btns a {width:100%!important;}
+ .fd-services-all-index {padding:1.75rem 1.25rem;}
+ .fd-directory-group .fd-services-all-list {gap:0 1rem;}
+ .fd-benefit-column {gap:1.5rem;}
+}
 .fd-testimonial-category {color:var(--gold-500);font-size:.85rem;margin-bottom:1rem;}
 body.modal-open {overflow:hidden;}
 .first-draft .fd-container {width:100%;max-width:1280px;margin:0 auto;padding:0 1.5rem;}
@@ -812,10 +838,7 @@ body.modal-open {overflow:hidden;}
 .fd-services-section .fd-service-card {color:var(--navy-900);text-align:left;font:inherit;cursor:pointer;width:100%;}
 .fd-service-card:focus-visible {outline:3px solid var(--primary-blue);outline-offset:4px;}
 .fd-service-card .fd-service-icon-wrapper svg {width:32px;height:32px;}
-.fd-services-all-index details+details {margin-top:1rem;}
-.fd-services-all-index summary {cursor:pointer;min-height:52px;padding:.75rem 0;font-size:1.2rem;font-weight:700;color:var(--gold-500);}
-.fd-services-all-index .fd-service-link-item {color:var(--white);font:inherit;text-align:left;min-height:60px;}
-.fd-services-all-index .fd-service-link-item:hover {background:var(--primary-blue);}
+.fd-services-all-index .fd-service-link-item {color:var(--white);text-align:left;}
 .fd-directory-intro {color:var(--slate-300);margin:0 0 1.5rem;}
 .fd-directory-intro p+p {margin-top:.75rem;}
 .fd-service-link-item span {flex:1;}
