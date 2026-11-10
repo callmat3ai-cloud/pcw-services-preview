@@ -4,8 +4,6 @@
  * capabilities filtering, and preserved webhook estimate submission.
  */
 
-document.documentElement.classList.add('js');
-
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Initialize Lucide Icons
   if (typeof lucide !== 'undefined') {
@@ -30,11 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
   const mobileDrawer = document.getElementById('mobile-drawer');
   const mobileCloseBtn = document.querySelector('.mobile-close-btn');
-  let mobileNavTrigger = null;
 
   function openMobileNav() {
     if (!mobileDrawer) return;
-    mobileNavTrigger = document.activeElement;
     mobileDrawer.classList.add('is-open');
     mobileDrawer.setAttribute('aria-hidden', 'false');
     if (mobileNavToggle) mobileNavToggle.setAttribute('aria-expanded', 'true');
@@ -47,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileDrawer.setAttribute('aria-hidden', 'true');
     if (mobileNavToggle) mobileNavToggle.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
-    if (mobileNavTrigger && typeof mobileNavTrigger.focus === 'function') mobileNavTrigger.focus();
   }
 
   if (mobileNavToggle) {
@@ -62,48 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-
-  // 3b. Hash modal keyboard close and focus restoration.
-  let modalTrigger = null;
-  document.querySelectorAll('a[href^="#"]').forEach((trigger) => {
-    const target = document.getElementById(trigger.getAttribute('href').slice(1));
-    if (target && target.classList.contains('modal')) {
-      trigger.addEventListener('click', () => { modalTrigger = trigger; });
-    }
-  });
-  function activeHashModal() {
-    return window.location.hash ? document.querySelector(window.location.hash + '.modal') : null;
-  }
-  function focusHashModal() {
-    const modal = activeHashModal();
-    if (!modal) return;
-    const close = modal.querySelector('.modal-close');
-    if (close) close.focus();
-  }
-  window.addEventListener('hashchange', focusHashModal);
-  document.querySelectorAll('.modal-close').forEach((close) => {
-    close.addEventListener('click', () => {
-      window.setTimeout(() => { if (modalTrigger) modalTrigger.focus(); }, 0);
-    });
-  });
-  document.querySelectorAll('.modal').forEach((modal) => {
-    modal.addEventListener('click', (event) => {
-      // Dismiss only a deliberate backdrop click, never ordinary pointer movement.
-      if (event.target === modal) {
-        window.location.hash = '';
-        window.setTimeout(() => { if (modalTrigger) modalTrigger.focus(); }, 0);
-      }
-    });
-  });
-
   // Keyboard trap & Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       if (mobileDrawer && mobileDrawer.classList.contains('is-open')) {
         closeMobileNav();
-      } else if (activeHashModal()) {
-        window.location.hash = '';
-        window.setTimeout(() => { if (modalTrigger) modalTrigger.focus(); }, 0);
       } else {
         const activeDropdown = document.activeElement ? document.activeElement.closest('.nav-item') : null;
         if (activeDropdown) {
@@ -232,27 +190,12 @@ async function handleFormSubmit(event) {
   const submitButton = form.querySelector('button[type="submit"]');
   const originalButtonHtml = submitButton ? submitButton.innerHTML : 'Submit Estimate Request';
 
-  const fieldValue = (id) => {
-    const field = document.getElementById(id);
-    return field ? field.value.trim() : '';
-  };
   const payload = {
-    name: fieldValue('contact-name'),
-    address: fieldValue('contact-address'),
-    resident_name: fieldValue('contact-resident'),
-    resident_address: fieldValue('contact-resident-address'),
-    email: fieldValue('contact-email'),
-    phone: fieldValue('contact-phone'),
-    management_company_or_owner: fieldValue('contact-mgmt'),
-    contact_name: fieldValue('contact-contact-name'),
-    contact_email: fieldValue('contact-contact-email'),
-    contact_phone: fieldValue('contact-contact-phone'),
-    gate_code: fieldValue('contact-gate'),
-    special_access_notes: fieldValue('contact-access'),
-    due_date: fieldValue('contact-due'),
-    attached_photo_or_maps: fieldValue('contact-photo'),
-    service: fieldValue('contact-service'),
-    message: fieldValue('contact-message'),
+    name: document.getElementById('contact-name').value.trim(),
+    email: document.getElementById('contact-email').value.trim(),
+    phone: document.getElementById('contact-phone').value.trim(),
+    service: document.getElementById('contact-service').value,
+    message: document.getElementById('contact-message').value.trim(),
     source_url: window.location.href
   };
 
