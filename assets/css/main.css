@@ -2240,8 +2240,7 @@ textarea.form-control {
 }
 
 /* scroll reveal */
-.reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.is-in { opacity: 1; transform: none; }
+.reveal, .reveal.is-in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
 }
@@ -2394,3 +2393,72 @@ textarea.form-control {
   border-color: rgba(255, 255, 255, 0.35);
   transform: translateY(-1px);
 }
+
+/* ==========================================================================
+   FIRST-DRAFT ROYAL-BLUE REINSTATEMENT — homepage visual composition
+   Keeps current routes, form wiring, and modal content while restoring the
+   original image-led hierarchy, dark directory rhythm, and restrained density.
+   ========================================================================== */
+.site-header { background: rgba(10, 25, 47, 0.94); border-bottom: 1px solid rgba(255,255,255,.11); }
+.site-header.scrolled { background: rgba(10, 25, 47, 0.98); }
+.brand-logo-img { width: 166px; height: auto; }
+.desktop-nav { flex-wrap: nowrap; gap: clamp(.8rem, 1.5vw, 1.6rem); }
+.nav-link { white-space: nowrap; line-height: 1; }
+.hero-section { min-height: 670px; height: min(760px, 90dvh); padding: calc(var(--header-height) + 4rem) 0 4rem; }
+.hero-scrim { background: linear-gradient(102deg, rgba(10,25,47,.96) 4%, rgba(10,25,47,.78) 50%, rgba(10,25,47,.38) 100%); }
+.hero-content { max-width: 760px; }
+.hero-title { font-size: clamp(3.8rem, 7vw, 6.4rem); line-height: .92; letter-spacing: .018em; }
+.hero-title span { color: var(--primary-blue); }
+.hero-lead { max-width: 650px; font-size: 1.14rem; color: var(--slate-200); }
+.hero-trust-bar { background: rgba(10,25,47,.93); border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); }
+.division-gateway-section { padding: 6.5rem 0; }
+.division-gateway-section.division-project { background: var(--slate-100); }
+.division-gateway-section.division-property { background: var(--white); }
+.division-grid { align-items: center; }
+.division-text .section-h2 { font-size: clamp(2.9rem,5vw,4.9rem); line-height: .95; }
+.division-image-wrap { min-height: 340px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
+.division-image-overlay { background: linear-gradient(135deg, rgba(10,25,47,.05), rgba(10,25,47,.54)); }
+.dir-section { padding: 5.75rem 0 3rem; }
+.dir-section .container { max-width: 1160px; }
+.dir-lead { max-width: 780px; margin: 0 auto 2.25rem; text-align: center; font-size: 1.04rem; }
+.dir-grid { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1.5rem; margin-top: 0; }
+.dir-card { min-height: 205px; padding: 2rem 1.75rem 1.55rem; background: rgba(23,55,102,.82); border-radius: 8px; }
+#prop-grid .dir-card { background: rgba(15,39,74,.92); }
+.dir-card h3 { font-size: 1.65rem; line-height: 1.05; }
+.dir-tag { line-height: 1.55; }
+.dir-open { margin-top: auto; width: 100%; padding: .72rem .85rem; background: transparent; border: 1px solid rgba(255,255,255,.4); color: var(--white); border-radius: var(--radius-sm); }
+.dir-open:hover, .dir-open:focus-visible { background: var(--primary-blue); border-color: var(--primary-blue); color: var(--white); }
+.directory-overview { padding: 0 0 5.75rem; text-align: center; background: var(--navy-950); color: var(--slate-300); }
+#proj-grid + .directory-overview { background: var(--navy-950); }
+#prop-grid + .directory-overview { background: var(--navy-900); }
+.directory-overview p { margin-bottom: 1rem; }
+.directory-overview-link { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; color: var(--gold-400); font-weight: 700; border-bottom: 1px solid currentColor; }
+.directory-overview-link:hover { color: var(--white); }
+.proof-section { background: var(--slate-100); }
+.capabilities-teaser-section { background: var(--white); }
+.testimonials-section { padding: 6.5rem 0; }
+.knowledge-hub-preview-section { background: var(--slate-100) !important; }
+.contact-section { background: var(--navy-950); }
+.modal { align-items: flex-start; background: rgba(10,25,47,.82); }
+.modal:target { align-items: flex-start; }
+.modal-card { border: 1px solid var(--primary-blue); box-shadow: var(--shadow-xl); }
+.modal-card .kicker { color: var(--gold-600); }
+.service-bullets li { font-size: 1rem; line-height: 1.65; }
+.modal-actions .btn { min-height: 44px; }
+@media (max-width: 1024px) { .header-phone { display:none; } .desktop-nav { gap:.8rem; } .nav-link { font-size:.82rem; } }
+@media (max-width: 768px) {
+  .hero-section { min-height: 650px; height: auto; padding: calc(var(--header-height) + 4.5rem) 0 4rem; }
+  .hero-title { font-size: clamp(3.4rem,15vw,4.7rem); }
+  .hero-trust-bar { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
+  .division-gateway-section { padding: 4.5rem 0; }
+  .division-grid { grid-template-columns: 1fr; gap: 2.25rem; }
+  .division-image-wrap { min-height: 250px; order: -1; }
+  .dir-grid { grid-template-columns: 1fr; }
+  .dir-card { min-height: 0; }
+  .directory-overview { padding-bottom: 4.5rem; }
+  .modal { padding: .75rem; }
+  .modal-card { margin: 1rem auto; max-height: calc(100vh - 2rem); }
+}
+/* Keep the first content transition purposeful rather than a pale empty wall. */
+.division-gateway-section.division-project { padding-top: 4.75rem; }
+@media (max-width: 768px) { .division-gateway-section.division-project { padding-top: 3.5rem; } }

@@ -57,9 +57,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Service detail modals: explicit close only — never dismiss on pointer movement.
+  const closeActiveModal = () => {
+    const activeModal = document.querySelector('.modal:target');
+    if (!activeModal) return false;
+    const closeLink = activeModal.querySelector('.modal-close');
+    window.location.hash = closeLink ? closeLink.getAttribute('href') : '#main-content';
+    return true;
+  };
+  document.querySelectorAll('.modal').forEach((modal) => {
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) closeActiveModal();
+    });
+  });
+
   // Keyboard trap & Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
+      if (closeActiveModal()) return;
       if (mobileDrawer && mobileDrawer.classList.contains('is-open')) {
         closeMobileNav();
       } else {
@@ -237,25 +252,4 @@ async function handleFormSubmit(event) {
   }
 }
 
-/* PCW interactive polish: cursor glow + scroll reveal + card tilt-safe hover (desktop only) */
-(function () {
-  try {
-    var fine = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!fine || reduced) return;
-
-    // scroll reveal for sections/cards
-    var els = document.querySelectorAll('section .container > *, .dir-card, .hub-topic-card, .review-card, .cap-card');
-    els.forEach(function (el) { el.classList.add('reveal'); });
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) {
-          if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
-        });
-      }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
-      els.forEach(function (el) { io.observe(el); });
-    } else {
-      els.forEach(function (el) { el.classList.add('is-in'); });
-    }
-  } catch (err) { /* never break the form */ if (window.console) console.warn('pcw polish skipped', err); }
-})();
+/* Homepage uses explicit modal controls; content remains visible without scripting. */
