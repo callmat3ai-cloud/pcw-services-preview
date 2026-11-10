@@ -35,6 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileDrawer.setAttribute('aria-hidden', 'false');
     if (mobileNavToggle) mobileNavToggle.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
+    // The drawer's visibility transition must finish before it accepts focus.
+    window.setTimeout(() => {
+      if (mobileDrawer.classList.contains('is-open')) mobileCloseBtn?.focus();
+    }, 300);
   }
 
   function closeMobileNav() {
@@ -43,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileDrawer.setAttribute('aria-hidden', 'true');
     if (mobileNavToggle) mobileNavToggle.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    mobileNavToggle?.focus();
   }
 
   if (mobileNavToggle) {
@@ -57,6 +62,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Reference homepage cards open existing complete service dialogs.
+  let modalOpener = null;
+  document.querySelectorAll('[data-modal]').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      modalOpener = trigger;
+      window.location.hash = trigger.dataset.modal;
+    });
+  });
+  const syncModalFocus = () => {
+    const modal = document.querySelector('.modal:target');
+    document.body.classList.toggle('modal-open', !!modal);
+    if (modal) {
+      const directory = document.getElementById(modal.id.startsWith('proj-') ? 'proj-grid' : 'prop-grid');
+      if (directory && directory.tagName === 'DETAILS') directory.open = true;
+      modal.querySelector('.modal-close')?.focus({ preventScroll: true });
+    } else if (modalOpener) {
+      modalOpener.focus({ preventScroll: true });
+      modalOpener = null;
+    }
+  };
+  window.addEventListener('hashchange', syncModalFocus);
+  syncModalFocus();
+  document.querySelectorAll('[data-project-filter]').forEach((button) => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('[data-project-filter]').forEach((other) => {
+        const active = other === button;
+        other.classList.toggle('active', active);
+        other.setAttribute('aria-pressed', String(active));
+      });
+      document.querySelectorAll('[data-project-category]').forEach((card) => {
+        card.hidden = button.dataset.projectFilter !== 'all' && card.dataset.projectCategory !== button.dataset.projectFilter;
+      });
+    });
+  });
   // Service detail modals: explicit close only — never dismiss on pointer movement.
   const closeActiveModal = () => {
     const activeModal = document.querySelector('.modal:target');
@@ -73,6 +112,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Keyboard trap & Escape
   document.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') {
+      const surface = document.querySelector('.modal:target') || (mobileDrawer?.classList.contains('is-open') ? mobileDrawer : null);
+      if (surface) {
+        const controls = [...surface.querySelectorAll('a[href],button,input,select,textarea,[tabindex="0"]')].filter(el => el.getClientRects().length);
+        const first = controls[0], last = controls[controls.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last?.focus(); }
+        if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first?.focus(); }
+      }
+    }
     if (e.key === 'Escape') {
       if (closeActiveModal()) return;
       if (mobileDrawer && mobileDrawer.classList.contains('is-open')) {
@@ -192,9 +240,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * EXACT PRESERVED WEBHOOK SUBMISSION HANDLER
+ * Backward-compatible estimate webhook submission.
  * Target: https://161-97-173-78.sslip.io/webhook/pcw-estimate-request
- * Payload Keys: name, email, phone, service, message, source_url
+ * Legacy keys remain unchanged; additional keys cover every displayed field.
  */
 async function handleFormSubmit(event) {
   event.preventDefault();
@@ -211,7 +259,18 @@ async function handleFormSubmit(event) {
     phone: document.getElementById('contact-phone').value.trim(),
     service: document.getElementById('contact-service').value,
     message: document.getElementById('contact-message').value.trim(),
-    source_url: window.location.href
+    source_url: window.location.href,
+    property_address: document.getElementById('contact-address').value.trim(),
+    resident_name: document.getElementById('contact-resident').value.trim(),
+    resident_address: document.getElementById('contact-resident-address').value.trim(),
+    management_company: document.getElementById('contact-mgmt').value.trim(),
+    contact_name: document.getElementById('contact-contact-name').value.trim(),
+    contact_email: document.getElementById('contact-contact-email').value.trim(),
+    contact_phone: document.getElementById('contact-contact-phone').value.trim(),
+    gate_code: document.getElementById('contact-gate').value.trim(),
+    access_notes: document.getElementById('contact-access').value.trim(),
+    due_date: document.getElementById('contact-due').value.trim(),
+    photo_maps_link: document.getElementById('contact-photo').value.trim()
   };
 
   if (submitButton) {

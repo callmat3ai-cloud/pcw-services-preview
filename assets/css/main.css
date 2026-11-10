@@ -1,6 +1,7 @@
 /* ==========================================================================
-   PCW CONTRACTING SERVICES - RESTRUCTURED PRODUCTION STYLESHEET
-   Clean, Calm, Board-Room Credible Architectural Design System
+   PCW CONTRACTING SERVICES — SHARED MULTI-PAGE STYLES
+   First-draft typography, navigation, service pages, forms, and dialogs.
+   Homepage composition lives in first-draft.css, not a late override stack.
    ========================================================================== */
 
 :root {
@@ -14,6 +15,13 @@
   --primary-blue: #2563eb;
   --primary-blue-dark: #1d4ed8;
   --blue-primary: var(--primary-blue);
+  --blue-hover: var(--primary-blue-dark);
+  --border-radius: 8px;
+  --border-radius-lg: 16px;
+  --shadow-premium: 0 20px 40px -15px rgba(0,0,0,.3);
+  --slate-400: #94a3b8;
+  --transition-smooth: color .25s, background-color .25s, border-color .25s, box-shadow .25s, transform .25s;
+  --transition-bounce: transform .3s, box-shadow .3s, border-color .3s;
   --blue-bright: #38bdf8;
   --blue-soft: #eff6ff;
 
@@ -79,14 +87,14 @@ html {
 body {
   font-family: var(--font-body);
   color: var(--slate-800);
-  background-color: var(--navy-950);
+  background-color: var(--slate-50);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: clip;
   width: 100%;
   position: relative;
-color: var(--slate-100);}
+}
 
 img, picture, svg, video {
   display: block;
@@ -165,7 +173,7 @@ button, input, select, textarea {
   cursor: pointer;
   min-height: 44px;
   line-height: 1.2;
-  transition: all 0.2s ease;
+  transition: color .2s, background-color .2s, border-color .2s, box-shadow .2s, transform 0.2s ease;
   border: 1px solid transparent;
   white-space: nowrap;
 }
@@ -284,7 +292,7 @@ button, input, select, textarea {
 .desktop-nav {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.2rem;
   flex-wrap: nowrap;
 }
 
@@ -296,7 +304,7 @@ button, input, select, textarea {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.65rem 0.85rem;
+  padding: 0.65rem 0.55rem;
   font-size: 0.92rem;
   font-weight: 500;
   color: #f1f5f9;
@@ -360,7 +368,7 @@ button, input, select, textarea {
 
 /* Multi-column Mega Dropdown for Project & Property Services */
 .mega-dropdown {
-  min-width: 580px;
+  min-width: 540px;
   padding: 1.25rem;
 }
 
@@ -388,7 +396,7 @@ button, input, select, textarea {
 
 .mega-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.5rem 1rem;
 }
 
@@ -415,7 +423,7 @@ button, input, select, textarea {
   opacity: 0;
   color: var(--gold-500);
   transform: translateX(-4px);
-  transition: all 0.15s ease;
+  transition: color .2s, background-color .2s, border-color .2s, box-shadow .2s, transform 0.15s ease;
 }
 
 .dropdown-item:hover i {
@@ -1009,7 +1017,7 @@ button, input, select, textarea {
 
 .differentiator-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem;
 }
 
@@ -1106,7 +1114,7 @@ button, input, select, textarea {
 
 .capabilities-teaser-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem;
 }
 
@@ -1303,7 +1311,8 @@ button, input, select, textarea {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  line-height:1.65;
   color: var(--slate-700);
 }
 
@@ -1440,7 +1449,7 @@ button, input, select, textarea {
   font-size: 0.88rem;
   color: var(--slate-700);
   border-radius: var(--radius-sm);
-  transition: all 0.15s ease;
+  transition: color .2s, background-color .2s, border-color .2s, box-shadow .2s, transform 0.15s ease;
 }
 
 .sidebar-link-item:hover {
@@ -1452,44 +1461,19 @@ button, input, select, textarea {
 /* ==========================================================================
    CONTACT FORM SECTION (EXACT PRESERVED IDS & FUNCTIONALITY)
    ========================================================================== */
-.contact-section {
-  padding: 5.5rem 0;
-  background: linear-gradient(180deg, var(--navy-900) 0%, var(--navy-950) 100%);
-  color: var(--white);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-.contact-section .section-h2 {
-  color: var(--white);
-}
-.contact-section .section-p {
-  color: var(--slate-300);
-}
-.contact-details-list {
-  color: var(--slate-200);
-}
-.contact-details-list strong {
-  color: var(--gold-400);
-}
-.contact-details-list a {
-  color: var(--white);
-}
-.contact-section .form-control {
-  background: rgba(14, 30, 56, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  color: var(--white);
-}
-.contact-section .form-control:focus {
-  border-color: var(--blue-bright);
-  background: rgba(18, 38, 70, 0.95);
-  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
-}
-.contact-section .form-label {
-  color: var(--slate-200);
-}
-.contact-section .form-helper {
-  color: var(--slate-400);
-}
-
+.contact-section {padding:7rem 0;background:var(--slate-50);color:var(--navy-900);}
+.contact-section .section-h2 {color:var(--white);}
+.contact-section .section-p {color:var(--slate-300);}
+.contact-section .contact-layout {background:var(--white);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-lg);gap:0;padding:0;}
+.contact-layout > :first-child {background:linear-gradient(135deg,var(--navy-900),var(--navy-950));color:var(--white);padding:3.5rem 2.5rem;align-self:stretch;}
+.contact-layout > :last-child {padding:3.5rem 2.5rem;}
+.contact-details-list {color:var(--slate-300);}
+.contact-section .section-h2 span {color:var(--gold-500);}
+.contact-section .contact-detail-text p,
+.contact-section .contact-detail-text a {color:var(--white);}
+.contact-section .contact-detail-text a:hover {color:var(--gold-500);}
+.contact-details-list strong {color:var(--gold-500);}
+.contact-details-list a {color:var(--white);overflow-wrap:anywhere;}
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr 1.25fr;
@@ -1754,7 +1738,7 @@ textarea.form-control {
   color: var(--slate-700);
   cursor: pointer;
   min-height: 44px;
-  transition: all 0.15s ease;
+  transition: color .2s, background-color .2s, border-color .2s, box-shadow .2s, transform 0.15s ease;
 }
 
 .gallery-filter-btn:hover,
@@ -1956,7 +1940,7 @@ textarea.form-control {
   }
 
   .differentiator-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .capabilities-teaser-grid {
@@ -2158,7 +2142,7 @@ textarea.form-control {
   justify-content: space-between;
   width: fit-content;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: color .2s, background-color .2s, border-color .2s, box-shadow .2s, transform 0.2s ease;
 }
 .dir-card:hover .dir-open {
   background: var(--primary-blue);
@@ -2173,6 +2157,7 @@ textarea.form-control {
 .modal { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(10, 25, 47, 0.7); padding: 1.5rem; overflow-y: auto; }
 .modal:target { display: flex; align-items: flex-start; justify-content: center; }
 .modal-card {
+  color: var(--navy-900);
   background: var(--white);
   border-radius: var(--radius-lg);
   max-width: 640px;
@@ -2362,7 +2347,7 @@ textarea.form-control {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
+  transition: color .2s, background-color .2s, border-color .2s, box-shadow .2s, transform 0.2s ease;
   cursor: pointer;
   line-height: 1.2;
 }
@@ -2394,71 +2379,20 @@ textarea.form-control {
   transform: translateY(-1px);
 }
 
-/* ==========================================================================
-   FIRST-DRAFT ROYAL-BLUE REINSTATEMENT — homepage visual composition
-   Keeps current routes, form wiring, and modal content while restoring the
-   original image-led hierarchy, dark directory rhythm, and restrained density.
-   ========================================================================== */
-.site-header { background: rgba(10, 25, 47, 0.94); border-bottom: 1px solid rgba(255,255,255,.11); }
-.site-header.scrolled { background: rgba(10, 25, 47, 0.98); }
-.brand-logo-img { width: 166px; height: auto; }
-.desktop-nav { flex-wrap: nowrap; gap: clamp(.8rem, 1.5vw, 1.6rem); }
-.nav-link { white-space: nowrap; line-height: 1; }
-.hero-section { min-height: 670px; height: min(760px, 90dvh); padding: calc(var(--header-height) + 4rem) 0 4rem; }
-.hero-scrim { background: linear-gradient(102deg, rgba(10,25,47,.96) 4%, rgba(10,25,47,.78) 50%, rgba(10,25,47,.38) 100%); }
-.hero-content { max-width: 760px; }
-.hero-title { font-size: clamp(3.8rem, 7vw, 6.4rem); line-height: .92; letter-spacing: .018em; }
-.hero-title span { color: var(--primary-blue); }
-.hero-lead { max-width: 650px; font-size: 1.14rem; color: var(--slate-200); }
-.hero-trust-bar { background: rgba(10,25,47,.93); border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); padding: 1.35rem 1.5rem; }
-.division-gateway-section { padding: 6.5rem 0; }
-.division-gateway-section.division-project { background: var(--slate-100); }
-.division-gateway-section.division-property { background: var(--white); }
-.division-grid { align-items: center; }
-.division-text .section-h2 { font-size: clamp(2.9rem,5vw,4.9rem); line-height: .95; }
-.division-image-wrap { min-height: 340px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
-.division-image-overlay { background: linear-gradient(135deg, rgba(10,25,47,.05), rgba(10,25,47,.54)); }
-.dir-section { padding: 5.75rem 0 3rem; }
-.dir-section .container { max-width: 1160px; }
-.dir-lead { max-width: 780px; margin: 0 auto 2.25rem; text-align: center; font-size: 1.04rem; }
-.dir-grid { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1.5rem; margin-top: 0; }
-.dir-card { min-height: 205px; padding: 2rem 1.75rem 1.55rem; background: rgba(23,55,102,.82); border-radius: 8px; }
-#prop-grid .dir-card { background: rgba(15,39,74,.92); }
-.dir-card h3 { font-size: 1.65rem; line-height: 1.05; }
-.dir-tag { line-height: 1.55; }
-.dir-open { margin-top: auto; width: 100%; padding: .72rem .85rem; background: transparent; border: 1px solid rgba(255,255,255,.4); color: var(--white); border-radius: var(--radius-sm); }
-.dir-open:hover, .dir-open:focus-visible { background: var(--primary-blue); border-color: var(--primary-blue); color: var(--white); }
-.directory-overview { padding: 1.5rem 0 5.75rem; text-align: center; background: var(--navy-950); color: var(--slate-300); }
-#proj-grid + .directory-overview { background: var(--navy-950); }
-#prop-grid + .directory-overview { background: var(--navy-900); }
-.directory-overview p { margin-bottom: 1rem; }
-.directory-overview-link { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; color: var(--gold-400); font-weight: 700; border-bottom: 1px solid currentColor; }
-.directory-overview-link:hover { color: var(--white); }
-.proof-section { background: var(--slate-100); }
-.capabilities-teaser-section { background: var(--white); }
-.testimonials-section { padding: 6.5rem 0; }
-.knowledge-hub-preview-section { background: var(--slate-100) !important; }
-.contact-section { background: var(--navy-950); }
-.modal { align-items: flex-start; background: rgba(10,25,47,.82); }
-.modal:target { align-items: flex-start; }
-.modal-card { border: 1px solid var(--primary-blue); box-shadow: var(--shadow-xl); }
-.modal-card .kicker { color: var(--gold-600); }
-.service-bullets li { font-size: 1rem; line-height: 1.65; }
-.modal-actions .btn { min-height: 44px; }
-@media (max-width: 1024px) { .header-phone { display:none; } .desktop-nav { gap:.8rem; } .nav-link { font-size:.82rem; } }
-@media (max-width: 768px) {
-  .hero-section { min-height: 650px; height: auto; padding: calc(var(--header-height) + 4.5rem) 0 4rem; }
-  .hero-title { font-size: clamp(3.4rem,15vw,4.7rem); }
-  .hero-trust-bar { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
-  .division-gateway-section { padding: 4.5rem 0; }
-  .division-grid { grid-template-columns: 1fr; gap: 2.25rem; }
-  .division-image-wrap { min-height: 250px; order: -1; }
-  .dir-grid { grid-template-columns: 1fr; }
-  .dir-card { min-height: 0; }
-  .directory-overview { padding-bottom: 4.5rem; }
-  .modal { padding: .75rem; }
-  .modal-card { margin: 1rem auto; max-height: calc(100vh - 2rem); }
-}
-/* Keep the first content transition purposeful rather than a pale empty wall. */
-.division-gateway-section.division-project { padding-top: 4.75rem; }
-@media (max-width: 768px) { .division-gateway-section.division-project { padding-top: 3.5rem; } }
+
+/* Shared first-draft typography and access states. */
+h1,h2,h3,h4,h5,h6 {font-family:var(--font-heading);font-weight:400;letter-spacing:.05em;line-height:1.1;}
+.btn {font-family:var(--font-heading);font-size:1.2rem;border-radius:8px;letter-spacing:.05em;}
+::selection {background:var(--gold-500);color:var(--navy-950);}
+html {scroll-padding-top:96px;scrollbar-color:var(--primary-blue) var(--navy-950);}
+input,textarea {caret-color:var(--primary-blue);}
+body.homepage .site-header {position:absolute;left:0;right:0;background:transparent;border-bottom:0;}
+body.homepage .site-header.scrolled {position:fixed;background:var(--navy-950);}
+.nav-item:last-child .dropdown-menu {left:auto;right:0;}
+.modal-actions .btn-secondary-dark {background:var(--white);color:var(--primary-blue);border:1px solid var(--primary-blue);}
+.modal-card h3 {padding-right:2rem;}
+.service-bullets li svg,.feature-list-item svg {width:18px;height:18px;flex:0 0 18px;margin-top:.2rem;}
+.service-bullets {font-size:16px;}
+.modal-division {color:var(--primary-blue);margin-bottom:.5rem;}
+@media(max-width:1200px){.desktop-nav,.header-actions .header-phone{display:none;}.mobile-nav-toggle{display:inline-flex;}}
+@media(max-width:768px){.contact-section{padding:4rem 1rem;}.contact-layout>:first-child,.contact-layout>:last-child{padding:2rem 1.25rem;}}
