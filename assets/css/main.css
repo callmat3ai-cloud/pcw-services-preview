@@ -1825,7 +1825,7 @@ textarea.form-control {
 
 .footer-top-grid {
   display: grid;
-  grid-template-columns: 1.6fr 1.2fr 1.2fr 1fr;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr) minmax(0, 1.2fr) minmax(0, 1fr);
   gap: 3rem;
   margin-bottom: 4rem;
 }
@@ -1948,7 +1948,7 @@ textarea.form-control {
   }
 
   .footer-top-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2.5rem;
   }
 
@@ -1998,7 +1998,7 @@ textarea.form-control {
   }
 
   .footer-top-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 2rem;
   }
 
