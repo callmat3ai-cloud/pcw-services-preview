@@ -37,6 +37,66 @@ html,body {overflow-x:clip;}
 .revision-division-0 .fd-directory-route a {color:var(--revision-gold);}
 .revision-division-1 .fd-directory-route a {color:var(--revision-blue);}
 .revision-division .fd-directory-route a {display:inline-flex;align-items:center;min-height:44px;font-weight:700;}
+
+/* Homepage service directories — review-only visual treatment.
+   The live service anchors, names, order, modal targets, and route links stay
+   intact. These rules change only the presentation of the existing directory
+   lists into a single dark panel of separate service-name tiles. */
+.revision-division .fd-services-all-list {
+ background:#0f172a;
+ border:2px solid #080d17;
+ border-radius:8px;
+ box-shadow:0 8px 14px rgba(0,0,0,.14);
+ gap:.75rem;
+ padding:1.5rem;
+}
+.revision-division .fd-service-link-item {
+ min-height:50px;
+ padding:.7rem .8rem;
+ background:#202839;
+ border:1px solid #30384a;
+ border-radius:4px;
+ color:#fff;
+ font-size:.875rem;
+ font-weight:700;
+ line-height:1.2;
+ text-align:center;
+ justify-content:center;
+ gap:.5rem;
+}
+.revision-division .fd-service-link-item::before {
+ content:"";
+ flex:0 0 12px;
+ width:12px;
+ height:12px;
+ box-sizing:border-box;
+ border:1.5px solid currentColor;
+ border-radius:2px;
+ opacity:.95;
+}
+.revision-division .fd-service-link-item:nth-child(4n + 2)::before {border-radius:50%;}
+.revision-division .fd-service-link-item:nth-child(4n + 3)::before {border-radius:0;transform:rotate(45deg) scale(.78);}
+.revision-division .fd-service-link-item:nth-child(4n + 4)::before {border-radius:50% 50% 2px 2px;}
+.revision-division .fd-service-link-item i {display:none;}
+.revision-division .fd-service-link-item:hover {
+ background:#2563eb;
+ border-color:#2563eb;
+ color:#fff;
+ transform:none;
+ box-shadow:none;
+}
+.revision-division .fd-service-link-item:focus-visible {
+ outline:2px solid #fbbf24;
+ outline-offset:3px;
+}
+@media(max-width:768px) {
+ .revision-division .fd-services-all-list {grid-template-columns:repeat(2,minmax(0,1fr));padding:1rem;gap:.625rem;}
+ .revision-division .fd-service-link-item {min-height:52px;font-size:.8125rem;padding:.65rem .5rem;}
+}
+@media(max-width:480px) {
+ .revision-division .fd-services-all-list {grid-template-columns:minmax(0,1fr);}
+ .revision-division .fd-service-link-item {min-height:52px;font-size:.9375rem;}
+}
 /* Why Choose: readable rich navy, aligned checks, fully visible credentials. */
 .first-draft #about {background:var(--revision-navy);color:var(--revision-white);padding:5rem 0;}
 #about .fd-why-us-grid {align-items:start;gap:2rem 3rem;grid-template-areas:"image intro" "image benefits";grid-template-rows:auto 1fr;}
