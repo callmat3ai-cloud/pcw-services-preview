@@ -146,7 +146,7 @@ html,body {overflow-x:clip;}
 .carousel-dots button span {width:10px;height:10px;border:1px solid var(--revision-navy);border-radius:50%;background:var(--revision-white);}
 .carousel-dots button[aria-pressed="true"] span {background:var(--revision-blue);border-color:var(--revision-blue);}
 /* Resource cards: real titles and images, same readable journey on home and index. */
-#resources {background:var(--revision-light);}
+#resources {background:var(--revision-white);}
 .guide-grid,.work-image-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;}
 .guide-card,.work-card {display:flex;flex-direction:column;min-width:0;color:var(--revision-navy);background:var(--revision-white);border:1px solid var(--revision-line);border-radius:10px;overflow:hidden;box-shadow:0 6px 20px -12px var(--revision-shadow);transition:transform .2s,border-color .2s;}
 .guide-card:hover,.work-card:hover {transform:translateY(-3px);border-color:var(--revision-blue);}
@@ -267,3 +267,32 @@ html,body {overflow-x:clip;}
  .guide-card:hover,.work-card:hover {transform:none;}
  .carousel-track {scroll-behavior:auto;}
 }
+
+/* Credentials band: licensing, client types and trade affiliations at the page foot. */
+.fd-credentials-section {background:var(--revision-navy);color:var(--revision-white);padding:5rem 0;}
+.fd-credentials-section .credentials-head {max-width:75ch;margin:0 0 2.5rem;}
+.fd-credentials-section .credentials-eyebrow {font-family:var(--font-body);font-size:.9375rem;line-height:1.5;font-weight:700;letter-spacing:0;text-transform:none;color:var(--revision-gold);margin:0 0 .75rem;}
+.fd-credentials-section .fd-section-title {color:var(--revision-white);text-align:left;margin:0 0 1rem;}
+.fd-credentials-section .fd-section-title span {color:var(--revision-gold);}
+.fd-credentials-section .fd-section-title::after {margin-left:0;margin-right:auto;}
+.fd-credentials-section .fd-section-desc {color:var(--revision-soft);font-size:1.0625rem;line-height:1.75;margin:0;}
+.fd-credentials-section .license-block {background:var(--revision-panel);margin:0 0 3rem;padding:2rem;border-radius:var(--radius-md);}
+.fd-credentials-section .license-block h3 {font-size:1.7rem;line-height:1.3;color:var(--revision-white);margin:0;}
+.fd-credentials-section .license-block h3 span {font-family:var(--font-body);font-size:1rem;display:block;margin-top:.5rem;color:var(--revision-gold);}
+.fd-credentials-section .license-block p {font-size:1.0625rem;line-height:1.8;color:var(--revision-soft);margin:.75rem 0 0;}
+.fd-credentials-section .client-strip {margin-top:0;}
+.fd-credentials-section .client-strip h3 {color:var(--revision-white);font-size:1.75rem;line-height:1.3;margin:0 0 .5rem;}
+.fd-credentials-section .affiliation-strip {border-radius:var(--radius-md);background:var(--revision-panel);border:1px solid var(--revision-line);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem 2rem;justify-content:start;align-items:start;text-align:left;padding:1.5rem;margin:1rem 0 2rem;}
+.fd-credentials-section .affiliation-tag {display:grid;grid-template-columns:24px minmax(0,1fr);gap:.8rem;align-items:start;justify-content:start;min-width:0;white-space:normal;font-size:1rem;line-height:1.6;font-weight:500;color:var(--revision-white);}
+.fd-credentials-section .affiliation-tag svg {width:22px;height:22px;flex-shrink:0;margin-top:.1rem;color:var(--revision-gold);}
+@media(max-width:980px) {.fd-credentials-section .affiliation-strip {grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:600px) {
+ .fd-credentials-section {padding:3.5rem 0;}
+ .fd-credentials-section .affiliation-strip {grid-template-columns:minmax(0,1fr);gap:1.2rem;padding:1.25rem;}
+ .fd-credentials-section .license-block {padding:1.5rem;}
+}
+/* Adjacent pale bands after the HOA/Commercial-first ordering need tonal separation. */
+.portfolio-capabilities {border-top:1px solid rgba(255,255,255,.16);}
+.portfolio-maintenance {background:var(--revision-white);border-top:1px solid var(--revision-line);}
+/* Stats rail overlaps the hero and now sits above the navy Why Choose band; keep a deliberate light margin under the card. */
+.first-draft .fd-stats-bar-section {padding:0 0 3rem;}
