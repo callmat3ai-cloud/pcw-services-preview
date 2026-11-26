@@ -332,6 +332,7 @@ html,body {overflow-x:clip;}
 /* ===== Capability icon tiles (no repeated stock photos) ===== */
 .capability-tile{display:flex;flex-direction:column;align-items:flex-start;gap:1rem;padding:1.75rem;background:var(--revision-navy);border:1px solid rgba(255,255,255,.14);border-radius:10px;overflow:visible;box-shadow:0 6px 20px -12px var(--revision-shadow)}
 .capability-tile .capability-icon{display:grid;place-items:center;width:52px;height:52px;border-radius:10px;background:rgba(247,215,109,.14);color:var(--gold-500)}
+.capability-tile{overflow:hidden}.capability-tile .tile-photo{width:100%;height:190px;object-fit:cover;object-position:center;display:block;margin-bottom:.25rem;background:var(--revision-light)}
 .capability-tile .capability-icon svg{width:26px;height:26px}
 .portfolio-capabilities .capability-tile{background:var(--revision-navy);color:var(--revision-white)}
 .portfolio-capabilities .capability-tile .image-disclosure{color:var(--revision-soft)}
