@@ -296,7 +296,7 @@ async function handleFormSubmit(event) {
       toast.classList.add('show');
       setTimeout(() => toast.classList.remove('show'), 6000);
     } else {
-      window.alert('Thank you! Your estimate request has been received. A PCW technical estimator will follow up with you within 24 business hours.');
+      window.alert('Thank you! Your estimate request has been received. A PCW representative will follow up.');
     }
   } catch (error) {
     console.error('PCW estimate request error:', error);

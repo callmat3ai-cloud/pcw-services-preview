@@ -296,3 +296,51 @@ html,body {overflow-x:clip;}
 .portfolio-maintenance {background:var(--revision-white);border-top:1px solid var(--revision-line);}
 /* Stats rail overlaps the hero and now sits above the navy Why Choose band; keep a deliberate light margin under the card. */
 .first-draft .fd-stats-bar-section {padding:0 0 3rem;}
+
+/* ===== Approved testimonial carousel: single calm reading card, no visible controls ===== */
+.review-carousel-status[hidden]{display:none!important}
+.review-carousel-status{display:flex;align-items:center;justify-content:center;gap:.65rem;width:max-content;min-width:5.5rem;margin:1.25rem auto 1.5rem;padding:.45rem .8rem;border-top:1px solid currentColor;border-bottom:1px solid currentColor;color:inherit;font:600 .78rem/1 var(--font-body,sans-serif);letter-spacing:.12em}
+.review-carousel-status::before{content:"";width:1.9rem;height:2px;background:currentColor;opacity:.45}
+.review-carousel.is-active{display:block}
+.review-carousel.is-active>[hidden]{display:none!important}
+.review-carousel.is-active>*{max-width:48rem;margin:auto}
+.fd-testimonials-section{padding:5.5rem 0 6rem}
+.fd-testimonials-section .review-carousel-status{color:var(--gold-500)}
+.fd-testimonials-section .review-carousel.is-active .fd-testimonial-card{min-height:21rem;display:flex;flex-direction:column;justify-content:center;padding:3.25rem 3.5rem;background:#132e52;border:1px solid rgba(255,255,255,.16);border-radius:10px;box-shadow:0 20px 42px rgba(0,0,0,.22)}
+.fd-testimonials-section .fd-testimonial-content{max-width:40rem;margin:1.1rem 0 1.8rem;font-family:var(--font-body);font-size:1.125rem;line-height:1.75;color:#f4f7fa;font-style:normal}
+.fd-testimonials-section .fd-testimonial-category{color:var(--gold-400);font-family:var(--font-body);font-size:.82rem;font-weight:700;letter-spacing:.04em;text-transform:none}
+.fd-testimonials-section .fd-review-name{font-size:1.04rem}
+.fd-testimonials-section .fd-review-title{margin-top:.22rem}
+.fd-testimonials-section .is-duplicate-role .fd-review-title{display:none}
+.review-carousel.is-active.review-grid{display:block;max-width:50rem;margin:0 auto}
+.review-carousel.is-active .review-card{min-height:21rem;justify-content:center;padding:3rem 3.4rem;background:#fff;border:1px solid #cad4de;border-radius:10px;box-shadow:0 18px 42px rgba(20,38,59,.1)}
+.review-carousel.is-active .review-card p{max-width:42rem;margin:1rem 0 1.75rem;font-size:1.075rem;line-height:1.75;color:#263849;font-style:normal}
+.review-carousel.is-active .review-cat{font-family:var(--font-body);font-size:.82rem;letter-spacing:.04em;text-transform:none;color:#915f00}
+.review-carousel.is-active .review-name{font-size:1.02rem}
+.review-carousel.is-active .review-title{margin-top:.2rem}
+.review-carousel.is-active .is-duplicate-role .review-title{display:none}
+.review-carousel-status+.review-carousel{margin-top:0!important}
+#work-slide-1 .carousel-image img{object-fit:cover;object-position:center 32%}
+.fd-testimonials-section .fd-section-header{margin-bottom:2rem}
+.fd-testimonials-section .review-carousel-status{margin:0 auto 1.15rem}
+.fd-testimonials-section .review-carousel.is-active .fd-testimonial-card{padding:2.45rem 3.5rem}
+.fd-testimonials-section .fd-testimonial-content{margin:.65rem 0 1.45rem}
+@media(max-width:600px){.fd-testimonials-section{padding:4rem 0}.fd-testimonials-section .review-carousel.is-active .fd-testimonial-card,.review-carousel.is-active .review-card{min-height:0;padding:2rem 1.45rem}.fd-testimonials-section .fd-testimonial-content,.review-carousel.is-active .review-card p{font-size:1rem;line-height:1.7}.review-carousel-status{margin:1rem auto 1.25rem}}
+@media(prefers-reduced-motion:reduce){.review-carousel-status{display:none}.review-carousel:not(.is-active){display:grid}.review-carousel:not(.is-active).fd-testimonials-grid{grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}.review-carousel:not(.is-active).review-grid{grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}}
+@media(max-width:600px){.fd-testimonials-section .fd-section-header{margin-bottom:1.5rem}.fd-testimonials-section .review-carousel.is-active .fd-testimonial-card{padding:1.75rem 1.45rem}.fd-testimonials-section .fd-testimonial-content{margin:.6rem 0 1.25rem}}
+
+/* ===== Capability icon tiles (no repeated stock photos) ===== */
+.capability-tile{display:flex;flex-direction:column;align-items:flex-start;gap:1rem;padding:1.75rem;background:var(--revision-navy);border:1px solid rgba(255,255,255,.14);border-radius:10px;overflow:visible;box-shadow:0 6px 20px -12px var(--revision-shadow)}
+.capability-tile .capability-icon{display:grid;place-items:center;width:52px;height:52px;border-radius:10px;background:rgba(247,215,109,.14);color:var(--gold-500)}
+.capability-tile .capability-icon svg{width:26px;height:26px}
+.portfolio-capabilities .capability-tile{background:var(--revision-navy);color:var(--revision-white)}
+.portfolio-capabilities .capability-tile .image-disclosure{color:var(--revision-soft)}
+.portfolio-capabilities .capability-tile .guide-read{color:var(--gold-400)}
+.portfolio-maintenance .capability-tile{background:var(--revision-white);border-color:var(--revision-line);color:var(--revision-navy)}
+.portfolio-maintenance .capability-tile .capability-icon{background:rgba(15,39,74,.08);color:var(--revision-navy)}
+.portfolio-maintenance .capability-tile .image-disclosure{color:var(--revision-copy)}
+.portfolio-maintenance .capability-tile .guide-read{color:var(--revision-blue)}
+.capability-tile .work-card-copy{display:flex;flex-direction:column;gap:.55rem;flex-grow:1;padding:0}
+.capability-tile .image-disclosure{font-size:.875rem;line-height:1.6}
+@media(max-width:980px){.capability-tile-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.capability-tile-grid{grid-template-columns:minmax(0,1fr)}.capability-tile{padding:1.4rem}}

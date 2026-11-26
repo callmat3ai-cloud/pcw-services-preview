@@ -1,0 +1,64 @@
+# PCW Contracting Services
+
+> Southern California general contractor serving homeowner associations, commercial properties, and other building types since 1989. California contractor license #699611.
+
+## Core pages
+- [Home](https://pcw.services/): Home: commercial and HOA reconstruction services, completed projects, testimonials, and contact.
+- [About](https://pcw.services/about/): About: company background, licensing, and the reasons clients choose PCW.
+- [Contact](https://pcw.services/contact/): Contact: request an estimate and reach the Costa Mesa office.
+- [Employment](https://pcw.services/employment/): Employment: send a resume by email to Customerservice@pcwservices.com.
+- [Testimonials](https://pcw.services/testimonials/): Client testimonials from community managers, board members, and property owners.
+- [Project Services](https://pcw.services/project-services/): Project services for large-scale reconstruction and building envelope repair.
+- [Property Services](https://pcw.services/property-services/): Property services for individual repairs and ongoing maintenance.
+- [Our Work](https://pcw.services/our-work/): Portfolio of PCW work and project listings.
+- [Knowledge Hub](https://pcw.services/knowledge-hub/): Knowledge hub index with three approved construction guides.
+
+## Approved guides
+- [El Nino Prep](https://pcw.services/knowledge-hub/el-nino-prep/): Preparing a property and office for storm-season work orders.
+- [Surviving El Nino](https://pcw.services/knowledge-hub/surviving-el-nino/): Managing inspections, tarps, and communication during storm season.
+- [What A Vendor Needs](https://pcw.services/knowledge-hub/what-a-vendor-needs/): Information to provide a vendor before emergency repair work.
+
+## Project listings
+- [Glendale Memorial](https://pcw.services/our-work/glendale-memorial/): Glendale Memorial project listing.
+- [Hoag Hospital](https://pcw.services/our-work/hoag-hospital/): Hoag Hospital project listing.
+- [Lincoln Elementary](https://pcw.services/our-work/lincoln-elementary/): Lincoln Elementary project listing.
+- [South Bay Adult School](https://pcw.services/our-work/south-bay-adult-school/): South Bay Adult School project listing.
+- [Tulita Elementary](https://pcw.services/our-work/tulita-elementary/): Tulita Elementary project listing.
+
+## Service pages
+- [Below Grade Waterproofing](https://pcw.services/services/below-grade-waterproofing/): Below Grade Waterproofing service details.
+- [Block Walls](https://pcw.services/services/block-walls/): Block Walls service details.
+- [Common Area Components](https://pcw.services/services/common-area-components/): Common Area Components service details.
+- [Concrete Fences](https://pcw.services/services/concrete-fences/): Concrete Fences service details.
+- [Concrete](https://pcw.services/services/concrete/): Concrete service details.
+- [Decking Systems](https://pcw.services/services/decking-systems/): Decking Systems service details.
+- [Decking](https://pcw.services/services/decking/): Decking service details.
+- [Defect Repair](https://pcw.services/services/defect-repair/): Defect Repair service details.
+- [Dry Rot Repair](https://pcw.services/services/dry-rot-repair/): Dry Rot Repair service details.
+- [Dry Rot Repairs](https://pcw.services/services/dry-rot-repairs/): Dry Rot Repairs service details.
+- [Emergency Services](https://pcw.services/services/emergency-services/): Emergency Services service details.
+- [Exterior Repairs](https://pcw.services/services/exterior-repairs/): Exterior Repairs service details.
+- [Flashing](https://pcw.services/services/flashing/): Flashing service details.
+- [Frp Systems](https://pcw.services/services/frp-systems/): Frp Systems service details.
+- [High Rise Specialists](https://pcw.services/services/high-rise-specialists/): High Rise Specialists service details.
+- [Interior Remodel](https://pcw.services/services/interior-remodel/): Interior Remodel service details.
+- [Interior Repairs](https://pcw.services/services/interior-repairs/): Interior Repairs service details.
+- [Maintenance Programs](https://pcw.services/services/maintenance-programs/): Maintenance Programs service details.
+- [Painting Services](https://pcw.services/services/painting-services/): Painting Services service details.
+- [Painting](https://pcw.services/services/painting/): Painting service details.
+- [Parking Structures](https://pcw.services/services/parking-structures/): Parking Structures service details.
+- [Planter Boxes](https://pcw.services/services/planter-boxes/): Planter Boxes service details.
+- [Podium Decks](https://pcw.services/services/podium-decks/): Podium Decks service details.
+- [Pool Spa](https://pcw.services/services/pool-spa/): Pool Spa service details.
+- [Repair History Tracking](https://pcw.services/services/repair-history-tracking/): Repair History Tracking service details.
+- [Roofing](https://pcw.services/services/roofing/): Roofing service details.
+- [Roofs Gutters](https://pcw.services/services/roofs-gutters/): Roofs Gutters service details.
+- [Sb 326 Repairs](https://pcw.services/services/sb-326-repairs/): Sb 326 Repairs service details.
+- [Spall Repairs](https://pcw.services/services/spall-repairs/): Spall Repairs service details.
+- [Structural Repairs](https://pcw.services/services/structural-repairs/): Structural Repairs service details.
+- [Stucco](https://pcw.services/services/stucco/): Stucco service details.
+- [Tile Paver Systems](https://pcw.services/services/tile-paver-systems/): Tile Paver Systems service details.
+- [Water Testing](https://pcw.services/services/water-testing/): Water Testing service details.
+- [Waterproofing Systems](https://pcw.services/services/waterproofing-systems/): Waterproofing Systems service details.
+- [Windows Doors](https://pcw.services/services/windows-doors/): Windows Doors service details.
+- [Windows Storefronts](https://pcw.services/services/windows-storefronts/): Windows Storefronts service details.
