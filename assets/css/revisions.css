@@ -364,3 +364,4 @@ html,body {overflow-x:clip;}
 @media(prefers-reduced-motion:reduce){
   .review-carousel.is-active>.review-track{transition:none}
 }
+#institutions .image-credit{margin:1rem 0 0;font-size:.78rem;line-height:1.5;opacity:.7}
