@@ -300,6 +300,19 @@ button, input, select, textarea {
   position: relative;
 }
 
+/* Contact + Employment: keep inline, never shrink/wrap */
+.nav-inline-links {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.nav-inline-links .nav-link {
+  flex-shrink: 0;
+}
+
 .nav-link {
   display: inline-flex;
   align-items: center;
